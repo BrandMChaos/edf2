@@ -1,15 +1,30 @@
 import React from 'react';
 import logo from './logo.svg';
+
+import ReactDOM from 'react';
+import Draggable from 'react-draggable';
 import './App.css';
 import { ImageEditorComponent } from '@syncfusion/ej2-react-image-editor';
 
 function App() {
   return (
-    
-    <div style={{width:'350px', height:'500px'}}>
-      <ImageEditorComponent></ImageEditorComponent>
-    </div>
-    
+    <body>
+      <div style={{width:'450px', height:'500px'}}>
+          <Draggable
+          axis='x'
+          handle='.handle'
+          defaultPosition={{x: 0, y:0}}
+          //position={null}
+          //grid={{25, 25}}
+          scale = {1}
+          //onStart={handleStart}
+          //onDrag={this.handleDrag}
+          //onStop={this.handleStop}
+          >
+            <ImageEditorComponent></ImageEditorComponent>
+          </Draggable>
+      </div>
+    </body>
     /*
     <div className="App">
       <header className="App-header">
