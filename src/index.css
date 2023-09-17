@@ -34,3 +34,14 @@ html,
   
   z-index: 100;
 }
+
+.basicButton{
+  position: relative;
+  top: 520px;
+  left: 1070px;
+  width: 100px;
+  height: 35px;
+  z-index: 200;
+
+  @apply bg-gray-700 text-white px-4 py-1 rounded-md;
+}
