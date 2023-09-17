@@ -27,29 +27,26 @@ function App() {
 
 
     <div>
-      <div>
-        <Draggable>   
-          {/* <div className='handle'></div> */}
-          <div style={{width:'450px', height:'500px'}}>
-            hi
-          <ImageEditorComponent />
+      <div className = "viewport">
+        <Draggable defaultPosition={{ x: 300, y: 700 }}>   
+          <div style={{width: '300px', height: '300px'}}>
+            <ImageEditorComponent />
           </div>
         </Draggable>
-        {/* <Draggable>
-          <div> Movable</div>
-        </Draggable> */}
       </div>
 
-      <div
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100vw",
-        height: "100vh"
-      }}
-      >
-      <Tldraw id={persistenceId} onMount={handleMount} />
+
+      <div className = "viewport">
+        <Draggable defaultPosition={{ x: 700, y: 500 }}>   
+          <div style={{width: '300px', height: '300px'}}>
+            <ImageEditorComponent />
+          </div>
+        </Draggable>
+      </div>
+
+
+      <div className = "whiteboard">
+        <Tldraw id={persistenceId} onMount={handleMount} />
       </div>
     </div>
   );
