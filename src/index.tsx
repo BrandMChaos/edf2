@@ -11,7 +11,7 @@ import { registerLicense } from '@syncfusion/ej2-base';
 
 //registerLicense(process.env.API_KEY? process.env.API_KEY:"" );
 
-  registerLicense("");
+  registerLicense("Ngo9BigBOggjHTQxAR8/V1NHaF5cXmVCf1NpRGVGfV5yd0VCallUTnRcUj0eQnxTdEZjUH5YcXNWQWVYVkJ1XA==");
 
 
 const root = ReactDOM.createRoot(
