@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 
 import ReactDOM from 'react';
@@ -14,23 +14,33 @@ function App() {
   //   console.log('Data: ', data);
   // };
 
-  // render() {
+  const [draggables, setDraggables] = useState([])
+
+  const addDrag = () => {
+    var dragList = {... draggables};
+  }
+
+
+document.body.insertAdjacentHTML('afterbegin', "<Draggable> <div style={{width:'450px', height:'500px'}}> <ImageEditorComponent /> </div></Draggable>");
+  
+  // conditionally  
+
   return (
 
-
-
-    <div>
-      <Draggable>   
-        {/* <div className='handle'></div> */}
-        <div style={{width:'450px', height:'500px'}}>
-          hi
-        <ImageEditorComponent />
-        </div>
-      </Draggable>
-      {/* <Draggable>
-        <div> Movable</div>
-      </Draggable> */}
-    </div>
+    <body>
+      <button /*onClick={}*/> Import Document  </button>
+      <div>
+        <Draggable handle = ".handle">   
+          {/* <div className='handle'></div> */}
+          <div className="handle" style={{width:'450px', height:'500px'}}>
+            Drag Here
+          <ImageEditorComponent />
+          </div>
+        </Draggable>
+      </div>
+      
+    
+    </body>
   );
 }
 // }
