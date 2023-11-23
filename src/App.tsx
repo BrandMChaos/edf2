@@ -38,7 +38,11 @@ function App() {
   
   return (
 
+document.body.insertAdjacentHTML('afterbegin', "<Draggable> <div style={{width:'450px', height:'500px'}}> <ImageEditorComponent /> </div></Draggable>");
+  
+  // conditionally  
 
+  return (
     <div>
       <div className = "viewport">
         <Draggable defaultPosition={{ x: 300, y: 700 }}>   
