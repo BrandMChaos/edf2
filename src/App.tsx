@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Tldraw, TldrawApp } from "@tldraw/tldraw";
+import "./index.css";
 import logo from './logo.svg';
-
+import { useState } from "react";
 import ReactDOM from 'react';
 import Draggable from 'react-draggable';
 import './App.css';
@@ -14,34 +16,69 @@ function App() {
   //   console.log('Data: ', data);
   // };
 
-  const [draggables, setDraggables] = useState([])
+  // render() {
+  
+  const [editorInstances, setEditorInstances] = useState([]);
 
-  const addDrag = () => {
-    var dragList = {... draggables};
-  }
+  const persistenceId = "tldraw-example";
 
+  const handleMount = (app: TldrawApp) => {
+    // You can use the app API here! e.g. app.selectAll()
+  };
+  
+  const handleClick = () => {
+    // implementation details
+
+    // Create a new instance of ImageEditorComponent
+    //const newEditorInstance = <ImageEditorComponent key={editorInstances.length} />;
+
+    // Update the state with the new instance
+    //setEditorInstances([...editorInstances, newEditorInstance]);
+  };
+  
+  return (
 
 document.body.insertAdjacentHTML('afterbegin', "<Draggable> <div style={{width:'450px', height:'500px'}}> <ImageEditorComponent /> </div></Draggable>");
   
   // conditionally  
 
   return (
-
-    <body>
-      <button /*onClick={}*/> Import Document  </button>
-      <div>
-        <Draggable handle = ".handle">   
-          {/* <div className='handle'></div> */}
-          <div className="handle" style={{width:'450px', height:'500px'}}>
-            Drag Here
-          <ImageEditorComponent />
+    <div>
+      <div className = "viewport">
+        <Draggable defaultPosition={{ x: 300, y: 700 }}>   
+          <div style={{width: '300px', height: '300px'}}>
+            <ImageEditorComponent />
           </div>
         </Draggable>
       </div>
-      
-    
-    </body>
+
+
+      <div className = "viewport">
+        <Draggable defaultPosition={{ x: 700, y: 500 }}>   
+          <div style={{width: '300px', height: '300px'}}>
+            <ImageEditorComponent />
+          </div>
+        </Draggable>
+      </div>
+
+      <div className = "whiteboard">
+        <Tldraw id={persistenceId} onMount={handleMount} />
+      </div>
+
+      <div className='basicButton'>
+        <button type="button" onClick={handleClick}>Add PDF</button>
+        <div className="editor-container">
+        {/* Render the existing instances */}
+        {editorInstances.map((instance, index) => (
+          <div key={index} className="editor-instance">
+            {instance}
+          </div>
+        ))}
+      </div>
+      </div>
+    </div>
   );
+
 }
 // }
 

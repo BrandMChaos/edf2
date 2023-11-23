@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +14,34 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+html,
+* {
+  box-sizing: border-box;
+}
+
+.whiteboard{
+  top: 0;
+  left: 0;
+  width: "100px";
+  height: "100px";
+  z-index: 0;
+}
+
+.viewport{
+  position: relative;
+  
+  z-index: 100;
+}
+
+.basicButton{
+  position: relative;
+  top: 520px;
+  left: 1070px;
+  width: 100px;
+  height: 35px;
+  z-index: 200;
+
+  @apply bg-gray-700 text-white px-4 py-1 rounded-md;
 }
